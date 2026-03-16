@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: tournament_db
+    environment:
+      POSTGRES_DB: tournament_manager
+      POSTGRES_USER: tournament_user
+      POSTGRES_PASSWORD: tournament_pass
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
