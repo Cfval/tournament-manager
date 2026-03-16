@@ -12,5 +12,5 @@ import java.time.LocalDateTime;
 public record CreateTournamentRequest(
         @NotBlank @Size(min = 3, max = 100) String name,
         @NotNull @Min(2) @Max(64) Integer maxTeams,
-        @NotNull @Future LocalDateTime startDate
+        @NotNull @Future(message = "Start date must be in the future") LocalDateTime startDate
 ) {}
