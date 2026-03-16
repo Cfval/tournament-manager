@@ -18,3 +18,10 @@ spring:
 
 server:
   port: 8080
+
+app:
+  security:
+    jwt:
+      # Replace with a strong, externalized secret in production (e.g. env var)
+      secret: c2VjcmV0LWtleS1mb3ItdG91cm5hbWVudC1tYW5hZ2VyLWFwcGxpY2F0aW9u
+      expiration: 86400000 # 24 hours in milliseconds
