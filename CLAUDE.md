@@ -1,10 +1,9 @@
 # Tournament Manager API
 
-Portfolio project. Goal: clean, defensible code for the European junior market.
-A senior developer must be able to review this and see structure, reasoned decisions and good practices.
+REST API for managing esports tournaments with single-elimination brackets, JWT authentication, and role-based access control.
 
 ## Stack
-- Java 21, Spring Boot 4.0.X, Maven
+- Java 17, Spring Boot 4.0.x, Maven
 - PostgreSQL 16 (Docker on port 5433), Spring Data JPA, Flyway
 - Spring Security + JWT
 - Lombok
@@ -22,17 +21,13 @@ com.cfval.tournament_manager
 ├── exception
 └── security
 
-## Current status
-Phase 1 in progress. Docker + Flyway migration working.
-Database schema already created via V1__create_tables.sql.
-Starting JPA entities now.
-
 ## Database schema
 Tables: users, tournaments, teams, registrations, matches
 - All PKs are UUID (gen_random_uuid())
 - matches.team_a_id, team_b_id, winner_id are nullable (assigned as bracket progresses)
 - matches.next_match_id is a self-reference FK
 - UNIQUE constraint on registrations(tournament_id, team_id)
+- UNIQUE constraint on teams(owner_id, name)
 
 ## Entities
 - User: id, username, email, passwordHash, role, createdAt
@@ -59,24 +54,19 @@ Tables: users, tournaments, teams, registrations, matches
 ## Use cases
 
 ### Anonymous
-- View tournament list
-- View tournament detail
-- View tournament bracket
-- Register (POST /auth/register)
-- Login (POST /auth/login)
+- View tournament list, detail and bracket
+- Register and login
 
 ### USER
 - Everything anonymous can do
-- Create a team
-- View own teams
+- Create teams and view own teams
 - Register a team in an open tournament
 
 ### ADMIN
 - Everything USER can do
-- Create a tournament
-- Close registrations
+- Create and manage tournaments
 - Generate bracket
-- Record a match result (triggers automatic round advancement)
+- Record match results (triggers automatic round advancement)
 
 ## API endpoints
 
@@ -99,33 +89,3 @@ POST   /api/tournaments/{id}/registrations        USER/ADMIN   Register team in 
 
 ### Matches
 POST   /api/matches/{id}/result                   ADMIN   Record result, triggers round advancement
-
-## Execution plan
-
-### Phase 1 — Foundation (current)
-- [x] Initialize Spring Boot project with Maven
-- [x] Configure Docker Compose with PostgreSQL
-- [x] Write V1__create_tables.sql with full schema
-- [x] Define JPA entities with annotations
-- [x] Implement Spring Security + JWT filter
-- [x] Working /auth/register and /auth/login endpoints
-
-### Phase 2 — Core domain
-- [x] TournamentService: CRUD + status transitions with validations
-- [x] TeamService: create team, register in tournament with all business validations
-- [x] Unit tests for all business validations
-- [x] Swagger configured and documenting implemented endpoints
-
-### Phase 3 — Bracket logic
-- [x] BracketService: full bracket generation with BYE handling
-- [x] MatchService: record result + automatic round advancement via nextMatchId
-- [x] Exhaustive unit tests for bracket (edge cases: powers of 2, odd numbers)
-- [x] Integration tests for the full tournament flow with Testcontainers
-
-### Phase 4 — Polish & deploy
-- [x] Global error handling with @ControllerAdvice
-- [x] Input validation with Bean Validation (@Valid)
-- [x] Professional README on GitHub
-- [x] Full Docker + docker-compose setup
-- [x] Deploy to Render with live Swagger UI
-```
