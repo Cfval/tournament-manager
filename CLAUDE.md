@@ -117,10 +117,10 @@ POST   /api/matches/{id}/result                   ADMIN   Record result, trigger
 - [x] Swagger configured and documenting implemented endpoints
 
 ### Phase 3 — Bracket logic
-- [ ] BracketService: full bracket generation with BYE handling
-- [ ] MatchService: record result + automatic round advancement via nextMatchId
-- [ ] Exhaustive unit tests for bracket (edge cases: powers of 2, odd numbers)
-- [ ] Integration tests for the full tournament flow with Testcontainers
+- [x] BracketService: full bracket generation with BYE handling
+- [x] MatchService: record result + automatic round advancement via nextMatchId
+- [x] Exhaustive unit tests for bracket (edge cases: powers of 2, odd numbers)
+- [x] Integration tests for the full tournament flow with Testcontainers
 
 ### Phase 4 — Polish & deploy
 - [ ] Global error handling with @ControllerAdvice

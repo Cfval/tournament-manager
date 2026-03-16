@@ -9,4 +9,5 @@ import java.util.UUID;
 
 public interface MatchRepository extends JpaRepository<Match, UUID> {
     List<Match> findByTournamentOrderByRoundAscPositionAsc(Tournament tournament);
+    boolean existsByTournament(Tournament tournament);
 }

@@ -9,4 +9,5 @@ import java.util.UUID;
 
 public interface TeamRepository extends JpaRepository<Team, UUID> {
     List<Team> findByOwner(User owner);
+    boolean existsByOwnerAndName(User owner, String name);
 }

@@ -4,6 +4,7 @@ import com.cfval.tournament_manager.dto.request.CreateTournamentRequest;
 import com.cfval.tournament_manager.dto.response.TournamentResponse;
 import com.cfval.tournament_manager.dto.response.TournamentSummaryResponse;
 import com.cfval.tournament_manager.exception.BusinessException;
+import com.cfval.tournament_manager.exception.ConflictException;
 import com.cfval.tournament_manager.exception.ResourceNotFoundException;
 import com.cfval.tournament_manager.model.Tournament;
 import com.cfval.tournament_manager.model.TournamentStatus;
@@ -30,6 +31,10 @@ public class TournamentService {
     @Transactional
     public TournamentResponse create(CreateTournamentRequest request, String creatorUsername) {
         User creator = loadUser(creatorUsername);
+
+        if (tournamentRepository.existsByNameAndStatusNot(request.name(), TournamentStatus.FINISHED)) {
+            throw new ConflictException("An active tournament named \"" + request.name() + "\" already exists");
+        }
 
         Tournament tournament = new Tournament();
         tournament.setName(request.name());

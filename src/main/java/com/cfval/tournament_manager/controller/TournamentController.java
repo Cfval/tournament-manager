@@ -1,8 +1,10 @@
 package com.cfval.tournament_manager.controller;
 
 import com.cfval.tournament_manager.dto.request.CreateTournamentRequest;
+import com.cfval.tournament_manager.dto.response.BracketResponse;
 import com.cfval.tournament_manager.dto.response.TournamentResponse;
 import com.cfval.tournament_manager.dto.response.TournamentSummaryResponse;
+import com.cfval.tournament_manager.service.BracketService;
 import com.cfval.tournament_manager.service.TournamentService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -27,6 +29,7 @@ import java.util.UUID;
 public class TournamentController {
 
     private final TournamentService tournamentService;
+    private final BracketService bracketService;
 
     @GetMapping
     public List<TournamentSummaryResponse> listAll() {
@@ -49,5 +52,17 @@ public class TournamentController {
     @PreAuthorize("hasRole('ADMIN')")
     public TournamentResponse closeRegistrations(@PathVariable UUID id) {
         return tournamentService.closeRegistrations(id);
+    }
+
+    @PostMapping("/{id}/bracket")
+    @ResponseStatus(HttpStatus.CREATED)
+    @PreAuthorize("hasRole('ADMIN')")
+    public BracketResponse generateBracket(@PathVariable UUID id) {
+        return bracketService.generateBracket(id);
+    }
+
+    @GetMapping("/{id}/bracket")
+    public BracketResponse getBracket(@PathVariable UUID id) {
+        return bracketService.getBracket(id);
     }
 }

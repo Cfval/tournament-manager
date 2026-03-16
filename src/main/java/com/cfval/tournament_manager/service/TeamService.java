@@ -37,6 +37,10 @@ public class TeamService {
     public TeamResponse createTeam(CreateTeamRequest request, String ownerUsername) {
         User owner = loadUser(ownerUsername);
 
+        if (teamRepository.existsByOwnerAndName(owner, request.name())) {
+            throw new ConflictException("You already have a team named \"" + request.name() + "\"");
+        }
+
         Team team = new Team();
         team.setName(request.name());
         team.setOwner(owner);
