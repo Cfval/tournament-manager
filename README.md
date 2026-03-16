@@ -2,12 +2,28 @@
 
 A RESTful API for managing single-elimination tournaments. Users can create teams, register for open tournaments, and track match results through a live bracket. Built as a portfolio project demonstrating clean Java backend architecture with production-ready practices.
 
-**Live demo:** _coming soon — deploying to Render_
+---
+
+## Live Demo
+
+**Swagger UI:** [https://tournament-manager-03je.onrender.com/swagger-ui/index.html](https://tournament-manager-03je.onrender.com/swagger-ui/index.html)
+
+| Field | Value |
+|---|---|
+| Username | `admin` |
+| Password | `Admin1234` |
+
+Or register a new account to explore the USER role.
+
+> The free Render instance spins down after inactivity. The first request may take up to 50 seconds to respond while the service wakes up.
+
+Sample data is already loaded — tournaments, teams, brackets, and match results are there to explore. Feel free to use the API freely: register your own account, create teams and tournaments, and test the full flow.
 
 ---
 
 ## Table of Contents
 
+- [Live Demo](#live-demo)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Architecture](#architecture)
