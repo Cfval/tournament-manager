@@ -12,6 +12,7 @@ public record RegisterRequest(
 
         @NotBlank
         @Email
+        @Size(max = 100)
         String email,
 
         @NotBlank
