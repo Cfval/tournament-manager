@@ -73,21 +73,26 @@ Tables: users, tournaments, teams, registrations, matches
 ## API endpoints
 
 ### Auth
+```
 POST   /api/auth/register       Anonymous   Register new user
 POST   /api/auth/login          Anonymous   Login, returns JWT
-
+```
 ### Tournaments
+```
 GET    /api/tournaments                           All     List all tournaments
 GET    /api/tournaments/{id}                      All     Tournament detail
 POST   /api/tournaments                           ADMIN   Create tournament
 PUT    /api/tournaments/{id}/close-registrations  ADMIN   Close registrations
 POST   /api/tournaments/{id}/bracket              ADMIN   Generate bracket
 GET    /api/tournaments/{id}/bracket              All     View bracket
-
+```
 ### Teams & Registrations
+```
 POST   /api/teams                                 USER/ADMIN   Create team
 GET    /api/teams                                 USER/ADMIN   List own teams
 POST   /api/tournaments/{id}/registrations        USER/ADMIN   Register team in tournament
-
+```
 ### Matches
+```
 POST   /api/matches/{id}/result                   ADMIN   Record result, triggers round advancement
+```
