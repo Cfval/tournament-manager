@@ -10,6 +10,7 @@ REST API for managing esports tournaments with single-elimination brackets, JWT 
 - Classic layered architecture: Controller → Service → Repository
 
 ## Project structure
+```
 com.cfval.tournament_manager
 ├── controller
 ├── service
@@ -20,6 +21,7 @@ com.cfval.tournament_manager
 │   └── response
 ├── exception
 └── security
+```
 
 ## Database schema
 Tables: users, tournaments, teams, registrations, matches
