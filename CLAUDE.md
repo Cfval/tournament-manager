@@ -111,10 +111,10 @@ POST   /api/matches/{id}/result                   ADMIN   Record result, trigger
 - [x] Working /auth/register and /auth/login endpoints
 
 ### Phase 2 — Core domain
-- [ ] TournamentService: CRUD + status transitions with validations
-- [ ] TeamService: create team, register in tournament with all business validations
-- [ ] Unit tests for all business validations
-- [ ] Swagger configured and documenting implemented endpoints
+- [x] TournamentService: CRUD + status transitions with validations
+- [x] TeamService: create team, register in tournament with all business validations
+- [x] Unit tests for all business validations
+- [x] Swagger configured and documenting implemented endpoints
 
 ### Phase 3 — Bracket logic
 - [ ] BracketService: full bracket generation with BYE handling
