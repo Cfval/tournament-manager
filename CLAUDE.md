@@ -3,7 +3,7 @@
 REST API for managing esports tournaments with single-elimination brackets, JWT authentication, and role-based access control.
 
 ## Stack
-- Java 17, Spring Boot 4.0.x, Maven
+- Java 21, Spring Boot 4.0.x, Maven
 - PostgreSQL 16 (Docker on port 5433), Spring Data JPA, Flyway
 - Spring Security + JWT
 - Lombok
