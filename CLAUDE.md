@@ -4,7 +4,7 @@ Portfolio project. Goal: clean, defensible code for the European junior market.
 A senior developer must be able to review this and see structure, reasoned decisions and good practices.
 
 ## Stack
-- Java 21, Spring Boot 3.3.x, Maven
+- Java 21, Spring Boot 4.0.X, Maven
 - PostgreSQL 16 (Docker on port 5433), Spring Data JPA, Flyway
 - Spring Security + JWT
 - Lombok
@@ -106,9 +106,9 @@ POST   /api/matches/{id}/result                   ADMIN   Record result, trigger
 - [x] Initialize Spring Boot project with Maven
 - [x] Configure Docker Compose with PostgreSQL
 - [x] Write V1__create_tables.sql with full schema
-- [ ] Define JPA entities with annotations
-- [ ] Implement Spring Security + JWT filter
-- [ ] Working /auth/register and /auth/login endpoints
+- [x] Define JPA entities with annotations
+- [x] Implement Spring Security + JWT filter
+- [x] Working /auth/register and /auth/login endpoints
 
 ### Phase 2 — Core domain
 - [ ] TournamentService: CRUD + status transitions with validations
