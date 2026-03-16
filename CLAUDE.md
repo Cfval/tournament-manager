@@ -123,9 +123,9 @@ POST   /api/matches/{id}/result                   ADMIN   Record result, trigger
 - [x] Integration tests for the full tournament flow with Testcontainers
 
 ### Phase 4 — Polish & deploy
-- [ ] Global error handling with @ControllerAdvice
-- [ ] Input validation with Bean Validation (@Valid)
-- [ ] Professional README on GitHub
-- [ ] Full Docker + docker-compose setup
-- [ ] Deploy to Render with live Swagger UI
+- [x] Global error handling with @ControllerAdvice
+- [x] Input validation with Bean Validation (@Valid)
+- [x] Professional README on GitHub
+- [x] Full Docker + docker-compose setup
+- [x] Deploy to Render with live Swagger UI
 ```
