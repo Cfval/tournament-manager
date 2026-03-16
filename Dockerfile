@@ -5,6 +5,7 @@ WORKDIR /app
 # Copy wrapper and POM first so dependency layer is cached independently
 COPY .mvn/ .mvn/
 COPY mvnw pom.xml ./
+RUN chmod +x mvnw
 RUN ./mvnw dependency:go-offline -q
 
 COPY src/ src/
