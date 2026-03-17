@@ -227,9 +227,17 @@ Spring Boot maps environment variables to properties automatically (`_` → `.`,
 
 ## Screenshots
 
-_Swagger UI and sample request/response screenshots will be added after the live deployment._
+### Interactive API documentation via Swagger UI
+![Swagger UI](docs/swagger-ui.JPG)
 
-<!-- Add screenshots here:
-![Swagger UI](docs/screenshots/swagger.png)
-![Bracket view](docs/screenshots/bracket.png)
--->
+### Tournament list response showing different statuses
+![Tournament list response](docs/tournaments-response.JPG)
+
+### Single-elimination bracket — 8 teams, 3 rounds
+![8-team bracket](docs/bracket-8teams.png)
+
+### Bracket with BYE handling — 6 teams adjusted to 8 slots
+![6-team bracket with BYEs](docs/bracket-6teams-bye.png)
+
+### generateBracket() algorithm flowchart
+![generateBracket flowchart](docs/bracket-flow.png)
