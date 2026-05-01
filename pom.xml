@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>4.0.3</version>
+		<version>3.3.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.cfval</groupId>
 	<artifactId>tournament-manager</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>tournament-manager</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Demo project</description>
 	<url/>
 	<licenses>
 		<license/>
