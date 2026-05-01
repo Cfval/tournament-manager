@@ -174,7 +174,7 @@ All errors follow a consistent envelope:
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/<your-username>/tournament-manager.git
+git clone https://github.com/Cfval/tournament-manager.git
 cd tournament-manager
 ```
 
